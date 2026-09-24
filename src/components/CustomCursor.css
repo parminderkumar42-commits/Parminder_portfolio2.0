@@ -1,0 +1,124 @@
+.custom-cursor-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-container.visible {
+  opacity: 1;
+}
+
+/* ================================================================
+   MAIN CURSOR — Real mouse pointer arrow icon
+   ================================================================ */
+.cursor-pointer-icon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Offset so tip of arrow is at mouse point */
+  margin-top: -2px;
+  margin-left: -2px;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  z-index: 3;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  transform-origin: 2px 2px; /* Arrow tip */
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.7));
+}
+
+.cursor-svg-arrow {
+  width: 100%;
+  height: 100%;
+  transition: filter 0.2s ease;
+}
+
+/* When hovering interactive elements — make icon lime-tinted and grow */
+.cursor-pointer-icon.cursor-hovered {
+  transform: scale(1.15);
+}
+
+.cursor-pointer-icon.cursor-hovered .cursor-svg-arrow path {
+  fill: var(--accent-primary);
+  stroke: #000;
+}
+
+/* When contextual text should show — shrink the pointer */
+.cursor-pointer-icon.cursor-has-text {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* ================================================================
+   FOLLOWER RING
+   ================================================================ */
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  border: 1.5px solid rgba(199, 255, 61, 0.45);
+  background-color: rgba(199, 255, 61, 0.03);
+  border-radius: 50%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease;
+  z-index: 2;
+}
+
+.cursor-follower.hovered {
+  width: 55px;
+  height: 55px;
+  margin-top: -27.5px;
+  margin-left: -27.5px;
+  background-color: rgba(199, 255, 61, 0.08);
+  border-color: rgba(199, 255, 61, 0.7);
+  box-shadow: 0 0 20px rgba(199, 255, 61, 0.15);
+}
+
+.cursor-follower.has-text {
+  width: 86px;
+  height: 86px;
+  margin-top: -43px;
+  margin-left: -43px;
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 30px rgba(199, 255, 61, 0.5);
+}
+
+.cursor-text {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #080808;
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cursor-follower.has-text .cursor-text {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (pointer: coarse) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+}

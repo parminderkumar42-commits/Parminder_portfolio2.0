@@ -1,0 +1,48 @@
+:root {
+  /* Color Palette */
+  --bg-primary: #080808;
+  --bg-secondary: #101010;
+  --bg-card: #111111;
+  --bg-card-hover: #161616;
+  --bg-glass: rgba(17, 17, 17, 0.7);
+  --bg-glass-strong: rgba(12, 12, 12, 0.85);
+
+  /* Accents */
+  --accent-primary: #C7FF3D;
+  --accent-primary-hover: #b5ee2e;
+  --accent-glow: rgba(199, 255, 61, 0.22);
+  --accent-glow-subtle: rgba(199, 255, 61, 0.08);
+  --accent-electric: #00FF88;
+  --accent-purple: #9d4edd;
+  --accent-purple-glow: rgba(157, 78, 221, 0.15);
+
+  /* Typography */
+  --text-primary: #F5F5F5;
+  --text-secondary: #A0A0A0;
+  --text-muted: #8D8D8D;
+  --text-dim: #555555;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(199, 255, 61, 0.35);
+
+  /* Font Families */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Fluid Spacing & Sizes */
+  --header-height: 80px;
+  --container-max-width: 1320px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
